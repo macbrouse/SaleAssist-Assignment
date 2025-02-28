@@ -1,12 +1,9 @@
 import { initializeApp } from "firebase/app";
 import { getAuth,GoogleAuthProvider } from 'firebase/auth';
 import { getAnalytics } from "firebase/analytics";
-require('dotenv').config();
-
-const firebaseKey=process.env.FIREBASE
 
 const firebaseConfig = {
-  apiKey: `${firebaseKey}`,
+  apiKey: 'AIzaSyCZIoMdzS7PDmsE6rJlcnOpoCqryySEx4Q',
   authDomain: "saleassist-234a8.firebaseapp.com",
   projectId: "saleassist-234a8",
   storageBucket: "saleassist-234a8.firebasestorage.app",

@@ -7,30 +7,25 @@ import {Chart as ChartJS,CategoryScale, LinearScale,PointElement,LineElement,Tit
 ChartJS.register(CategoryScale,LinearScale,PointElement,LineElement,Title,Tooltip,Legend);
 
 const ChartComponent = () => {
-  const [chartData, setChartData] = useState(null); // State to store the data
-  const [loading, setLoading] = useState(true); // Loading state
+  const [chartData, setChartData] = useState(null); 
+  const [loading, setLoading] = useState(true); 
 
   useEffect(() => {
     // Fetch data from API
     const fetchData = async () => {
       try {
         
-        const response = await fetch('http://localhost:8000/api/stats'); // Replace with your API URL
+        const response = await fetch('https://saleassist-assignment.onrender.com/api/stats'); 
         const data = await response.json();
 
-        // Assuming the API returns data in the following format:
-        // data = [{date: "2022-01-01", value: 10}, {date: "2022-01-02", value: 20}, ...]
-
-        // Format the data to be used in the chart
-        const labels = data.map(item => item.hitCount); // X-axis labels (dates)
-        const values = data.map(item => item.loginCount); // Y-axis values (e.g., sales, temperature, etc.)
-
-        // Set the chart data
+        const labels = data.map(item => item.hitCount); 
+        const values = data.map(item => item.loginCount); 
+        
         setChartData({
           labels: labels,
           datasets: [
             {
-              label: 'My Data',
+              label: 'User Traffic',
               data: values,
               fill: false,
               borderColor: 'rgba(75,192,192,1)',
@@ -49,16 +44,16 @@ const ChartComponent = () => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>; // Loading message
+    return <div>Loading...</div>; 
   }
 
   if (!chartData) {
-    return <div>No data available</div>; // If no data is fetched
+    return <div>No data available</div>; 
   }
 
   return (
     <div>
-      <h2>Chart Title</h2>
+      <h2>User Analytics</h2>
       <Line data={chartData} />
     </div>
   );

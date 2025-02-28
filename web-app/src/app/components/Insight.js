@@ -12,7 +12,7 @@ const Insight = () => {
 
     const fetchApiData = async () => {
         try {
-            const apiUrl = process.dotenv.APIURL ? process.dotenv.APIURL : `http://localhost:8000/api/stats`
+            const apiUrl = 'https://saleassist-assignment.onrender.com/api/stats'
             const response = await fetch(`${apiUrl}`); 
             const data = await response.json();
             const hitData = data[0]; 
