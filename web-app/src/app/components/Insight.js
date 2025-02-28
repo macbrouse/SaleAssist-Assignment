@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { configDotenv } from 'dotenv';
 
 
+configDotenv();
 const Insight = () => {
     const [hitCount, setHitCount] = useState(0); 
     const [hitTiming, setHitTiming] = useState([]); 
