@@ -63,7 +63,7 @@ function DemoPageContent({ router }) {
       ) : (
         <Box>
           <Typography variant="h4" gutterBottom>Dashboard</Typography>
-          <Charteg />&nbsp;&nbsp;<Charteg />
+          <Charteg />&nbsp;
         </Box>
       )}
     </Box>

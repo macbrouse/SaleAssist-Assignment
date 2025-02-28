@@ -34,7 +34,7 @@ const Insight = () => {
                 body: JSON.stringify({
                     "contents": [{
                         "parts": [{
-                            "text": `Generate an insight from given peak usage time from my API data if ${hitCount} is the number of hits and ${hitTiming} is the time at the API is hit`
+                            "text": `Generate an insight from given peak usage time from my API data if ${hitCount} is the number of hits and ${hitTiming} is the time at the API is hit, If no pattern is available give random points`
                         }]
                     }]
                 }),
@@ -53,7 +53,9 @@ const Insight = () => {
     }, []);
 
     useEffect(() => {
-        insightReq();
+        if (!dataLoading) {
+            insightReq();
+        }
     }, [dataLoading, hitCount, hitTiming]);
 
     return (
