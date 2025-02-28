@@ -2,8 +2,10 @@ import { initializeApp } from "firebase/app";
 import { getAuth,GoogleAuthProvider } from 'firebase/auth';
 import { getAnalytics } from "firebase/analytics";
 
+const firebaseKey=process.env.FIREBASE
+
 const firebaseConfig = {
-  apiKey: "AIzaSyCZIoMdzS7PDmsE6rJlcnOpoCqryySEx4Q",
+  apiKey: `${firebaseKey}`,
   authDomain: "saleassist-234a8.firebaseapp.com",
   projectId: "saleassist-234a8",
   storageBucket: "saleassist-234a8.firebasestorage.app",
