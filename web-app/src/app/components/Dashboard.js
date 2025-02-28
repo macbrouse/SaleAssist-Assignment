@@ -42,9 +42,9 @@ const demoTheme = createTheme({
 });
 
 function DemoPageContent({ router }) {
-  // Get the current pathname to determine which content to show
+
   const currentPathname = router.pathname;
-  
+
   return (
     <Box 
       sx={{
@@ -55,7 +55,6 @@ function DemoPageContent({ router }) {
         textAlign: 'center'
       }}
     >
-      {/* Render different content based on the current path */}
       {currentPathname.includes('insight') ? (
         <Box>
           <Typography variant="h4" gutterBottom>AI Insights</Typography>
@@ -79,7 +78,6 @@ function Dashboard(props) {
   const [isClient, setIsClient] = React.useState(false);
   const { window } = props;
 
-  // Initialize the router with the correct initial path
   const router = useDemoRouter('/dashboard');
 
   React.useEffect(() => {
@@ -87,13 +85,11 @@ function Dashboard(props) {
   }, []);
 
   if (!isClient) {
-    return null; // Return null until the component mounts (client-side)
+    return null; 
   }
 
-  // Remove this const when copying and pasting into your project.
   const demoWindow = window || undefined;
 
-  // Custom handleNavigationClick function to add to AppProvider
   const handleNavigationClick = (segment) => {
     router.push(`/${segment}`);
   };
