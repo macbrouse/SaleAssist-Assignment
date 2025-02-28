@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { configDotenv } from 'dotenv';
 
-
-configDotenv();
 const Insight = () => {
     const [hitCount, setHitCount] = useState(0); 
     const [hitTiming, setHitTiming] = useState([]); 
@@ -10,7 +7,7 @@ const Insight = () => {
     const [loading, setLoading] = useState(true); 
     const [dataLoading, setDataLoading] = useState(true)
 
-    const apiKey=process.env.API
+    const apiKey=process.env.NEXT_PUBLIC_API
 
     const fetchApiData = async () => {
         try {

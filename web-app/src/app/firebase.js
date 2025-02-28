@@ -3,7 +3,7 @@ import { getAuth,GoogleAuthProvider } from 'firebase/auth';
 import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyCZIoMdzS7PDmsE6rJlcnOpoCqryySEx4Q',
+  apiKey: `${process.env.NEXT_PUBLIC_FIREBASE}`,
   authDomain: "saleassist-234a8.firebaseapp.com",
   projectId: "saleassist-234a8",
   storageBucket: "saleassist-234a8.firebasestorage.app",
